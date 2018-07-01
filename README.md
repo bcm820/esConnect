@@ -1,6 +1,6 @@
 # esConnect
 
-esConnect is a highly-configurable Javascript utility created to ease the burden of making detailed query requests to Elasticsearch cluster endpoints.
+esConnect is a highly configurable and syntactically concise Elasticsearch query builder created to ease the burden of making detailed query requests to Elasticsearch cluster endpoints.
 
 What it lacks in features when compared to other Elasticsearch query builders such as [bodybuilder](https://github.com/danpaz/bodybuilder) and [elastic-builder](https://github.com/sudo-suhas/elastic-builder), it makes up for in conciseness of syntax and composability.
 
