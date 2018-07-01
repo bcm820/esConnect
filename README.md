@@ -8,7 +8,20 @@ To import (after it is made available as an NPM module):
 ```
 import {buildESQuery} from 'esConnect';
 ```
-See "[Interoperability](#interoperability)" for instructions on importing as a React higher order component.
+
+## Contents
+- [esConnect](#esconnect)
+  - [Contents](#contents)
+  - [Basic Example](#basic-example)
+  - [Query Types](#query-types)
+  - [Modifiers](#modifiers)
+  - [Operators](#operators)
+- [Configuration](#configuration)
+- [Interoperability](#interoperability)
+  - [With React.js](#with-reactjs)
+  - [With elasticsearch.js](#with-elasticsearchjs)
+  - [With ReactiveSearch](#with-reactivesearch)
+  - [Future Plans](#future-plans)
 
 ## Basic Example
 [bool]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html
@@ -110,7 +123,7 @@ An optional configuration object can be passed in as a second argument to `build
 
 While esConnect can be used for forming and sending Elasticsearch queries via a basic HTTP request, it is also meant to be interoperable with other modules.
 
-## As a React HOC
+## With React.js
 
 Since the UI developers at [Decipher Technology Studios](https://github.com/DecipherNow) build all our products and solutions using [React](https://reactjs.org), I've initially implemented esConnect as a [React higher order component](https://reactjs.org/docs/higher-order-components.html) (HOC).
 
