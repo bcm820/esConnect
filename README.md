@@ -1,21 +1,17 @@
-# esConnect
+esConnect <!-- omit in toc -->
+==========
 
 esConnect is a highly configurable and syntactically concise Elasticsearch query builder created to ease the burden of making detailed query requests to Elasticsearch cluster endpoints.
-
-What it lacks in features when compared to other Elasticsearch query builders such as [bodybuilder](https://github.com/danpaz/bodybuilder) and [elastic-builder](https://github.com/sudo-suhas/elastic-builder), it makes up for in conciseness of syntax and composability.
 
 To import (after it is made available as an NPM module):
 ```
 import {buildESQuery} from 'esConnect';
 ```
-
-## Contents
-- [esConnect](#esconnect)
-  - [Contents](#contents)
-  - [Basic Example](#basic-example)
-  - [Query Types](#query-types)
-  - [Modifiers](#modifiers)
-  - [Operators](#operators)
+# Contents <!-- omit in toc -->
+- [Basic Example](#basic-example)
+- [Query Types](#query-types)
+- [Modifiers](#modifiers)
+- [Operators](#operators)
 - [Configuration](#configuration)
 - [Interoperability](#interoperability)
   - [With React.js](#with-reactjs)
@@ -23,7 +19,7 @@ import {buildESQuery} from 'esConnect';
   - [With ReactiveSearch](#with-reactivesearch)
   - [Future Plans](#future-plans)
 
-## Basic Example
+# Basic Example
 [bool]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html
 
 Using esConnect to access indexed Elasticsearch data for use in an application is as easy as passing a simple, single-depth object with search parameters and an optional configuration object into a function:
@@ -71,7 +67,7 @@ buildESQuery({
 }
 ```
 
-## Query Types
+# Query Types
 
 Many complex searches can be achieved using Elasticsearch's [bool query][bool] which combines the results of individual queries. By default, esConnect tells Elasticsearch to find search results that match all of its parameters, although that is [configurable via the `match` option](#configuration) as well as [various modifiers](#modiifers).
 
@@ -89,7 +85,7 @@ Many complex searches can be achieved using Elasticsearch's [bool query][bool] w
 | [Query string][qs] | Most relevant results for a given field matching at least one value.                              | `frame: ['carbon', 'aluminum']`                |
 |                    | Results matching Elasticsearch's custom query string query syntax.                                | `colors: '(black OR gray) AND red'`            |
 
-## Modifiers
+# Modifiers
 
 [filter]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#_scoring_with_literal_bool_filter_literal
 
@@ -98,7 +94,7 @@ Many complex searches can be achieved using Elasticsearch's [bool query][bool] w
 | [Filter][filter] | Enclose the field in parentheses to restrict results to documents that exactly match a given value. | `'(condition)': 'brand new'` |
 | [Exclude][bool]  | Prepend the key with "!" to exclude results that match the query.                                   | `!price': '> 1000`,          |
 
-## Operators
+# Operators
 
 The [query string query][qs] is a natural option for most cases due to its customizability. By default, building a query string query via esConnect by adding multiple values to an array tells Elasticsearch to find documents that match at least one of the values in the array. However, several different operators may be used to change the default behavior. While more nuanced query string queries may require using Elasticsearch's custom query string syntax, you may find the array approach helpful for your own use case (for example, when receiving multiple user inputs).
 
