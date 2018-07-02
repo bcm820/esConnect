@@ -118,19 +118,17 @@ The [query string query][qs] is a natural option for most cases due to its custo
 
 An optional configuration object can be passed in as a second argument to `buildESQuery`.
 
-| KEY      | EXAMPLE USAGE     | DESCRIPTION                                                                                         |
-| -------- | ----------------- | --------------------------------------------------------------------------------------------------- |
-| `size`   | `size: 25`        | Specify the maximum amount of results to return.                                                    |
-| `match`  | `match: 3`        | Specify the minimum amount of queries a result should match (all if left blank).                    |
-| `sortBy` | `sortBy: 'date^'` | Sort results by a specific date, number or keyword field, appending "^" to sort in ascending order. |
+| KEY      | VALUE TYPE | DESCRIPTION                                                                                         |
+| -------- | ---------- | --------------------------------------------------------------------------------------------------- |
+| `size`   | Integer    | Specify the maximum amount of results to return.                                                    |
+| `match`  | Integer    | Specify the minimum amount of queries a result should match (all if left blank).                    |
+| `sortBy` | String     | Sort results by a specific date, number or keyword field, appending "^" to sort in ascending order. |
 
 <br/>
 
 ## Interoperability
 
 While esConnect can be used for forming and sending Elasticsearch queries via a basic HTTP request, it is also meant to be interoperable with other modules.
-
-<br/>
 
 ### With React.js
 
@@ -155,8 +153,6 @@ The configuration object requires only an Elasticsearch URL endpoint, but other 
 | `log`  | Boolean    | Logs each constructed Elasticsearch query object to the console, or any errors that occurred with suggestions for resolving bugs. |
 | `test` | Boolean    | Runs esConnect in "test mode" (does not send a network request).                                                                  |
 
-<br/>
-
 ### With elasticsearch.js
 
 To use with ElasticSearch's official Javascript client, [elasticsearch.js](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-search), simply call `buildESQuery` as follows in the object given to its `search` method:
@@ -167,8 +163,6 @@ client.search({
 });
 ```
 
-<br/>
-
 ### With ReactiveSearch
 
 To use with [ReactiveSearch](https://opensource.appbase.io/reactive-manual/advanced/customquery.html), a React component library, simply pass a function that calls `buildESQuery` as follows into the `customQuery` prop. For example:
@@ -178,8 +172,6 @@ To use with [ReactiveSearch](https://opensource.appbase.io/reactive-manual/advan
   customQuery={() => buildESQuery(query, config)}
 />
 ```
-
-<br/>
 
 ### Future Plans
 
